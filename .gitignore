@@ -1,0 +1,4 @@
+git-test/package.json
+git-test/package-lock.json
+.vscode/
+git-test/node_modules/
