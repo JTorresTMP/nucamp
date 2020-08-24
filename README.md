@@ -1,4 +1,4 @@
-### Nucamp
+### NuCamp
 Repository for Nucamp Course
 
 
