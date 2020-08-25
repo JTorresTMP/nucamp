@@ -2,3 +2,6 @@ git-test/package.json
 git-test/package-lock.json
 .vscode/
 git-test/node_modules/
+2-Bootstrap/nucampsite/node_modules
+2-Bootstrap/nucampsite/package.json
+2-Bootstrap/nucampsite/package-lock.json
