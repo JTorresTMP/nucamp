@@ -5,3 +5,5 @@ git-test/node_modules/
 2-Bootstrap/nucampsite/node_modules
 2-Bootstrap/nucampsite/package.json
 2-Bootstrap/nucampsite/package-lock.json
+.DS_Store
+2-Bootstrap/.DS_Store
