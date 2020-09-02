@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-project",
+  "version": "1.0.0",
+  "description": "Not sure what to make yet",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+    "start": "npm run lite"
+  },
+  "author": "Jose Torres",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1",
+    "lite-server": "^2.5.4",
+    "popper.js": "^1.16.1",
+    "sass": "^1.26.10"
+  }
+}
