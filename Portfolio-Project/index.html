@@ -3,28 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
-        <ul>
-            <li>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="user_name">
-            </li>
-            <li>
-                <label for="mail">E-mail:</label>
-                <input type="email" id="mail" name="user_email">
-            </li>
-            <li>
-                <label for="msg">Message:</label>
-                <textarea name="user_message" id="msg"></textarea>
-            </li>
-            <li>
-                <button type="submit">Send your message</button>
-            </li>
-        </ul>
-    </form>
+    <div class="container-fluid" id="mainContainer">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNav">
+                <i class="fa fa-align-justify fa-lg" id="hamburger"></i> 
+            </button>
+
+            <div class="navbar-nav mr-auto">
+                <a href="#" class="navbar-brand">Test Logo</a>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end d-none d-md-block" id="collapsibleNav">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" id="createAccountButton">Create Account</a>
+                    </li>
+                    <li clas="nav-item">
+                        <a href="#" class="nav-link text-white" id="logIn">Log In</a>
+                    </li>
+                </ul>
     
+                <ul class="nav ml-4">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"> <i class="fa fa-twitch fa-lg" id="twitch"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"> <i class="fa fa-bell-o fa-lg" id="bell"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link"> <i class="fa fa-cog fa-lg" id="cog"></i></a>
+                    </li>
+    
+                </ul>
+            </div>
+            
+
+        </nav>
+        <div class="row">
+            <div class="col-2">
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>

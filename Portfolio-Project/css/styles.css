@@ -1,0 +1,13 @@
+#mainContainer {
+    margin: 0;
+    padding: 0;
+}
+
+#logIn {
+    border: 1px solid gray;
+    margin-left: 15px;
+}
+
+#twitch, #bell, #cog, #hamburger{
+    color: #fff;
+}
