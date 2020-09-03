@@ -11,3 +11,8 @@
 #twitch, #bell, #cog, #hamburger{
     color: #fff;
 }
+
+#bodyContainer {
+    margin-left: 0;
+    padding-left: 0;
+}
