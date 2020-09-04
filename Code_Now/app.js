@@ -4,7 +4,7 @@
 $(document).ready(function() {
     let alter_m_nav = function() {
         let vw = document.body.clientWidth;
-        if (vw > 768) {
+        if (vw >= 768) {
             $('#catNav').addClass('ml-5');
             $('#blogNav').addClass('ml-5');
             $('#aboutNav').addClass('ml-5');

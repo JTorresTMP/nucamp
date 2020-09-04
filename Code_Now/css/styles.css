@@ -11,3 +11,7 @@ h2 {
 
 
 @media (min-width: 768px) {}
+
+button:focus {
+    outline: none !important;
+};
