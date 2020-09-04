@@ -9,7 +9,16 @@ $(document).ready(function() {
             $('#blogNav').addClass('ml-5');
             $('#aboutNav').addClass('ml-5');
             $('#userAuthUL').addClass('ml-auto');
-        };
+            $('#LogInButton').removeClass('mt-3');
+            $('#signUpButton').removeClass('mt-2');
+        } else if (vw < 768) {
+            $('#userAuthUL').removeClass('ml-auto');
+            $('#LogInButton').addClass('mt-3');
+            $('#signUpButton').addClass('mt-2');
+            $('#catNav').removeClass('ml-5');
+            $('#blogNav').removeClass('ml-5');
+            $('#aboutNav').removeClass('ml-5');
+        }
     };
     $(window).resize(function() {
         alter_m_nav();
