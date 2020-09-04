@@ -10,9 +10,9 @@
 </head>
 <body>
     <div class="container-fluid" id="mainContainer">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNav">
-                <i class="fa fa-align-justify fa-lg" id="hamburger"></i> 
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#leftNav">
+                <i class="fa fa-align-justify fa-md" id="hamburger"></i> 
             </button>
 
             <div class="navbar-nav mr-auto">
@@ -43,17 +43,19 @@
         </nav>
         <div class="container-fluid" id="bodyContainer">
             <div class="row">
-                <div class="col-1">
-                    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <div class="col-1" style="min-width: 65px; max-width: 70px;">
+                    <nav class="navbar navbar-expand-sm navbar-dark bg-dark d-none d-sm-block" style='min-width: 65px; max-width: 70px;'>
+                        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#leftNav">
+                            <i class="fa fa-navicon fa-lg"></i>
+                        </button> -->
 
                         <div class="collapse navbar-collapse" id="leftNav">
-                            <ul class="navbar-nav flex-column">
-                                <li class="nav-item border-bottom">
+                            <ul class="navbar-nav flex-column justify-content-center">
+                                <li class="nav-item">
                                     <a href="#" class="nav-link"> <i class="fa fa-area-chart fa-lg" id="chartLeft"></i></a>
                                 </li>
-                                <hr>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"> <i class="fa fa-book fa-lg" id="chartLeft"></i></a>
+                                    <a href="#" class="nav-link"> <i class="fa fa-book fa-lg mt-3" id="chartLeft"></i></a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link"> <i class="fa fa-dashboard fa-lg mt-3" id="chartLeft"></i></a>
