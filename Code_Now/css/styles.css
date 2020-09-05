@@ -38,6 +38,7 @@ h2 {
     font-size: larger;
 }
 
-button:focus {
+/* I will keep this commented out for Accessibility Reasons */
+/* button:focus {
     outline: none !important;
-};
+}; */
