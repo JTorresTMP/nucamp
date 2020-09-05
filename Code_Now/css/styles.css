@@ -25,6 +25,11 @@ font-family: 'Work Sans', sans-serif; */
     #googleIcon, #appleIcon, #githubIcon, #linkedinIcon {
         margin-right: 0.25rem !important;
     }
+
+    #mainContainer {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 
