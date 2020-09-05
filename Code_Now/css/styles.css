@@ -4,14 +4,26 @@ font-family: 'Sarabun', sans-serif;
 font-family: 'Work Sans', sans-serif; */
 
 
-h2 {
-    font-family: 'Quicksand', sans-serif;
-    font-size: larger;
+@media (max-width: 768px) {
+    #catNav, #blogNav, #aboutNav {
+        margin-left: 0 !important;
+        padding-left: 0;
+    }
+    
+    #logInButton {
+        margin-top: 1rem;
+    }
+
+    #signUpButton {
+        margin-top: 0.5rem;
+    }
+
 }
 
 
-@media (min-width: 768px) {
-
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: larger;
 }
 
 button:focus {
