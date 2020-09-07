@@ -3,15 +3,42 @@ font-family: 'Quicksand', sans-serif;
 font-family: 'Sarabun', sans-serif;
 font-family: 'Work Sans', sans-serif; */
 
+/* Navbar Components Spacing when Collapsed */
+@media (max-width: 768px) {
+    #catNav, #blogNav, #aboutNav {
+        margin-left: 0 !important;
+        padding-left: 0;
+    }
+    
+    #logInButton {
+        margin-top: 1rem;
+    }
+
+    #signUpButton {
+        margin-top: 0.5rem;
+    }
+
+}
+
+/* Icon Spacing on SM Viewports */
+@media (max-width: 340px) {
+    #googleIcon, #appleIcon, #githubIcon, #linkedinIcon {
+        margin-right: 0.25rem !important;
+    }
+
+    #mainContainer {
+        margin: 0;
+        padding: 0;
+    }
+}
+
 
 h2 {
     font-family: 'Quicksand', sans-serif;
     font-size: larger;
 }
 
-
-@media (min-width: 768px) {}
-
-button:focus {
+/* I will keep this commented out for Accessibility Reasons */
+/* button:focus {
     outline: none !important;
-};
+}; */

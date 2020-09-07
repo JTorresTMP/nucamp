@@ -1,6 +1,6 @@
 
 
-//NAV JQUERY
+//NAV JQUERY Not Needed any more
 $(document).ready(function() {
     let alter_m_nav = function() {
         let vw = document.body.clientWidth;
