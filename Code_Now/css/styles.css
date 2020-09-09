@@ -30,9 +30,22 @@ font-family: 'Work Sans', sans-serif; */
         margin: 0;
         padding: 0;
     }
+
+    #card-bg {
+        height: 100%;
+        width: auto;
+        overflow: visible;
+    }
 }
 
-
+/* Card on SM+ Viewports */
+@media (min-width: 341px) {
+    #card-bg {
+        max-height: 425px;
+        width: auto;
+        overflow: hidden;
+    }
+}
 
 
 
@@ -42,12 +55,7 @@ h2 {
 }
 
 
-/* Thank you Stack OverFlow lol */
-#card-bg {
-    max-height: 425px;
-    width: auto;
-    overflow: hidden;
-}
+
 
 
 
