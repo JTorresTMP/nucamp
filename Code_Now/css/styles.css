@@ -41,6 +41,16 @@ h2 {
     font-size: larger;
 }
 
+
+/* Thank you Stack OverFlow lol */
+#card-bg {
+    max-height: 425px;
+    width: auto;
+    overflow: hidden;
+}
+
+
+
 /* I will keep this commented out for Accessibility Reasons */
 /* button:focus {
     outline: none !important;
