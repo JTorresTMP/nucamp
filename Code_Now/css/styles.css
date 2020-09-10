@@ -82,3 +82,11 @@ ul > li > p > a {
 /* button:focus {
     outline: none !important;
 }; */
+
+
+
+/* CATALOG STYLE SHEET */
+
+#catalogH1 {
+    font-family: 'Sarabun', sans-serif;
+}
