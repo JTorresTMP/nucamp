@@ -62,7 +62,18 @@ h2 {
 .footer-titles {
     font-family: 'Quicksand', sans-serif;
     font-weight: bolder;
+    font-size: large;
 }
+
+ul > li > p > a {
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+}
+
+/* #footerContainer {}  In case I want to edit something*/
+
+
 
 /* I will keep this commented out for Accessibility Reasons */
 /* button:focus {

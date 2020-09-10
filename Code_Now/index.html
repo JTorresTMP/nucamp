@@ -119,7 +119,7 @@
                             <p class="card-text">
                                 Have a look at our beginner articles below:
                             </p>
-                            <a href="#" class="btn btn-secondary d-none d-md-block">Catalog</a>
+                            <a href="#" class="btn btn-secondary d-none d-md-block">Or Browse Our Catalog</a>
                         </div>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                     <h5 class="card-title">
                         What is JavaScript?
                     </h5>
-                    <p class="card-text">Lorem Ipsum</p>
+                    <p class="card-text">The Basics of the Language</p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Originally Published 3 Days ago</small>
@@ -148,7 +148,7 @@
                     <h5 class="card-title">
                         Data Types
                     </h5>
-                    <p class="card-text">Lorem Ipsum</p>
+                    <p class="card-text">The 6 Primitive Data Types in JS</p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Originally Published 3 Days ago</small>
@@ -160,7 +160,8 @@
                     <h5 class="card-title">
                         How does the internet work?
                     </h5>
-                    <p class="card-text">Lorem Ipsum</p>
+                    <!-- Want to switch innerHTML with JS -->
+                    <p class="card-text d-none d-lg-block">Learn why the internet is considered one of the best inventions of our time.</p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Originally Published 3 Days ago</small>
@@ -169,18 +170,16 @@
         </div>
     </div>
     
-    <footer class="container-fluid mt-5">
-        <div class="row border">
+    <footer class="container-fluid mt-5 border-top" id="footerContainer">
+        <div class="row pt-4">
             <div class="col-2 offset-md-1">
+                <p class="footer-titles">Code_Now</p>
                 <ul class="list-unstyled">
-                    <li>
-                        <p class="footer-titles">Code_Now</p>
-                    </li>
                     <li>
                         <p>About</p>
                     </li>
                     <li>
-                        <p>Sign In</p>
+                        <p class="text-nowrap">Sign In</p>
                     </li>
                     <li>
                         <p>Social</p>
@@ -205,11 +204,9 @@
                     </li>
                 </ul>
             </div>
-            <div class="col d-none d-lg-block">
+            <div class="col offset-lg-1 d-none d-lg-block">
+                <p class="footer-titles">Catalog</p>
                 <ul class="list-unstyled">
-                    <li>
-                        <p class="footer-titles">Catalog</p>
-                    </li>
                     <li>
                         <p>What is JavaScript?</p>
                     </li>
@@ -224,8 +221,19 @@
                     </li>
                 </ul>
             </div>
-            <div class="col">
-                <h4 class="text-center">Footer</h4>
+            <div class="col text-right d-none d-md-block">
+                <p class="footer-titles">Additional Resources</p>
+                <ul class="list-unstyled">
+                    <li>
+                        <p><a href="https://javascript.info/" target="_blank">JavaScript.info</a></p>
+                    </li>
+                    <li>
+                        <p><a href="https://realpython.com/" target="_blank">RealPython.com</a></p>
+                    </li>
+                    <li>
+                        <p><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs</a></p>
+                    </li>
+                </ul>
             </div>
         </div>
 
