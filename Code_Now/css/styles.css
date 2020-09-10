@@ -71,6 +71,9 @@ ul > li > p > a {
     font-weight: normal;
 }
 
+.navbar {
+    background-color: mediumaquamarine;
+}
 /* #footerContainer {}  In case I want to edit something*/
 
 
