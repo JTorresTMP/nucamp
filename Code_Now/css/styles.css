@@ -54,6 +54,9 @@ h2 {
     font-size: larger;
 }
 
+.navbar-brand {
+    font-family: 'QuickSand', sans-serif;
+}
 
 .tarjeta {
     background-color: rgba(0, 0, 0, 0.5);
