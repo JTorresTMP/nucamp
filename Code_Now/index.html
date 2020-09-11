@@ -10,13 +10,15 @@
     <title>Code_Now</title>
 </head>
 <body>
-    <div class="container-fluid mx-0 px-0">
-        <nav class="navbar navbar-expand-md navbar-light sticky-top" style="background-color: mediumaquamarine;">
-            <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#topNav">
-                <i class="fa fa-magic fa-lg"></i>
-            </button>
-            <a href="#" class="navbar-brand mr-auto">Code_Now</a>
+    <div class="container-fluid mx-0 px-0 sticky-top" id="navContainer">
+        <div id="outerNav">
+            <nav class="navbar navbar-expand-md navbar-light sticky-top mt-0 pb-3">
+                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#topNav">
+                    <i class="fa fa-angle-down fa-lg"></i>
+                </button>
+                <a href="#" class="navbar-brand mr-auto" style="font-family: QuickSand, sans-serif;">Code_Now</a>
 
+<<<<<<< HEAD
             <div class="collapse navbar-collapse" id="topNav">
                 <ul class="navbar-nav">
                     <li class="nav-item ml-5" id="catNav">
@@ -45,9 +47,40 @@
         <div class="row">
             <div class="col d-none d-lg-block" style="max-width: 500px;">
                 <img src="static/infinity_gauntlet.jpg" class="img-fluid" alt="">
+=======
+                <div class="collapse navbar-collapse" id="topNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item ml-5" id="catNav">
+                            <a href="routes/catalog.html" class="nav-link">Catalog</a>
+                        </li>
+                        <li class="nav-item ml-5" id="blogNav">
+                            <a href="" class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item ml-5" id="aboutNav">
+                            <a href="" class="nav-link">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto" id="userAuthUL">
+                        <li class="nav-item">
+                            <a href="#" type="button" class="btn btn-outline-dark mr-3" id="loginButton">Log In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" type="button" class="btn btn-warning" id="signUpButton">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container" id="mainContainer">
+        <div class="row no-gutters">
+            <div class="col col-lg-5 d-none d-lg-block align-self-center" style="width: 200px"> <!--style="max-width: 500px;-->
+                <img src="static/starGuardian.jpg" class="img-fluid rounded" alt="">
+>>>>>>> bc15a45e7be17a5bdcf9ffe433496277ee969e6f
             </div>
-            <div class="col-lg-8">
-                <div class="col-md-8 offset-md-2 align-self-center">
+            <div class="col-lg-7" id="loginFormCol">
+                <div class="col-md-10 offset-md-1 offset-lg-2 align-self-center">
                     <div class="card-body">
                         <h5 class="card-title text-center">Get Started For Free</h5>
                         <div class="card mx-auto" style="max-width: 450px;">
@@ -104,6 +137,140 @@
             </div>
         </div>
     </div>
+
+    <div class="container mt-5">
+        <hr>
+        <div class="row">
+            <div class="col">
+                <div class="card bg-dark text-white"> <!--text-center text-md-left-->
+                    <div id="card-bg">
+                        <img src="static/starGuardian.jpg" class ="card-img" alt="BoTW">
+                    </div>
+                    <div class="card-img-overlay d-flex py-0 py-sm-3 tarjeta">
+                        <div class="align-self-center mx-auto">
+                            <h5 class="card-title font-weight-bold" >Not sure where to start?</h5>
+                            <p class="card-text">
+                                Have a look at our beginner articles below:
+                            </p>
+                            <a href="#" class="btn btn-secondary d-none d-md-block">Or Browse Our Catalog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <hr>
+        <div class="card-deck">
+            <div class="card">
+                <img src="static/Zelda_Link.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        What is JavaScript?
+                    </h5>
+                    <p class="card-text">The Basics of the Language</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Originally Published 3 Days ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="static/starGuardian.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Data Types
+                    </h5>
+                    <p class="card-text">The 6 Primitive Data Types in JS</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Originally Published 3 Days ago</small>
+                </div>
+            </div>
+            <div class="card">
+                <img src="static/Zelda_Link.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        How does the internet work?
+                    </h5>
+                    <!-- Want to switch innerHTML with JS -->
+                    <p class="card-text d-none d-lg-block">Learn why the internet is considered one of the best inventions of our time.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Originally Published 3 Days ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="container-fluid mt-5 border-top" id="footerContainer">
+        <div class="row pt-4">
+            <div class="col-2 offset-md-1">
+                <p class="footer-titles">Code_Now</p>
+                <ul class="list-unstyled">
+                    <li>
+                        <p>About</p>
+                    </li>
+                    <li>
+                        <p class="text-nowrap">Sign In</p>
+                    </li>
+                    <li>
+                        <p>Social</p>
+                    </li>
+                    <li>
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-outline-dark border-0" type="button">
+                                    <i class="fa fa-twitter"></i>
+                                </button>
+                                <button class="btn btn-outline-dark border-0" type="button">
+                                    <i class="fa fa-instagram"></i>
+                                </button>
+                                <button class="btn btn-outline-dark border-0" type="button">
+                                    <i class="fa fa-youtube-play"></i>
+                                </button>
+                                <button class="btn btn-outline-dark border-0" type="button">
+                                    <i class="fa fa-stack-overflow"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col offset-lg-1 d-none d-lg-block">
+                <p class="footer-titles">Catalog</p>
+                <ul class="list-unstyled">
+                    <li>
+                        <p>Data Types</p>
+                    </li>
+                    <li>
+                        <p>Recursion and Iteration</p>
+                    </li>
+                    <li>
+                        <p>Objects and Their Methods</p>
+                    </li>
+                    <li>
+                        <a href="routes/catalog.html" class="text-reset" style="text-decoration: none;">Click for More...</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col text-right d-none d-md-block">
+                <p class="footer-titles">Additional Resources</p>
+                <ul class="list-unstyled">
+                    <li>
+                        <p><a href="https://javascript.info/" target="_blank">JavaScript.info</a></p>
+                    </li>
+                    <li>
+                        <p><a href="https://realpython.com/" target="_blank">RealPython.com</a></p>
+                    </li>
+                    <li>
+                        <p><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
     
 
 

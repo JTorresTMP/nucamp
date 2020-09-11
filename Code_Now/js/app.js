@@ -1,4 +1,8 @@
 
+const myFunc = () => {
+    console.log('whatever')
+}
+
 
 //NAV JQUERY Not Needed any more
 $(document).ready(function() {

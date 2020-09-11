@@ -30,7 +30,23 @@ font-family: 'Work Sans', sans-serif; */
         margin: 0;
         padding: 0;
     }
+
+    #card-bg {
+        height: 100%;
+        width: auto;
+        overflow: visible;
+    }
 }
+
+/* Card on SM+ Viewports */
+@media (min-width: 341px) {
+    #card-bg {
+        max-height: 425px;
+        width: auto;
+        overflow: hidden;
+    }
+}
+
 
 
 h2 {
@@ -38,7 +54,68 @@ h2 {
     font-size: larger;
 }
 
+
+.tarjeta {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.footer-titles {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bolder;
+    font-size: large;
+}
+
+ul > li > p > a {
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+}
+
+.navbar {
+    background-color: mediumaquamarine;
+}
+/* #footerContainer {}  In case I want to edit something*/
+
+
+
 /* I will keep this commented out for Accessibility Reasons */
 /* button:focus {
     outline: none !important;
 }; */
+
+
+
+/* CATALOG STYLE SHEET */
+
+#catalogH1 {
+    font-family: 'Sarabun', sans-serif;
+}
+
+#catalogBody {
+    background-color: whitesmoke;
+}
+
+/* Card Columns Reponsiveness, TY StackOverflow */
+@media (min-width: 34em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 48em) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (min-width: 62em) {
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}
