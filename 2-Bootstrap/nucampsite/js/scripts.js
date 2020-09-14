@@ -12,3 +12,14 @@ $(function() {
         }
     });
 });
+
+//Modals
+// Week 4 Task 2
+$(function() {
+    $('#reserveButton').click(function() {
+        $('#reserveModal').modal('show')
+    });
+    $('#loginButton').click(function() {
+        $('#loginModal').modal('show')
+    })
+})
