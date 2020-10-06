@@ -16,13 +16,16 @@ class Bootcamp {
     }
 
     registerStudent(student) {
-        let enrolled = this.students.filter(pupil => pupil.email === student.email);
+        let enrolled = this.students.filter(pupil => {
+           return pupil.email === student.email
+        });
         if (enrolled.length >= 1) { //TIL an empty array is considered truthy
             //I originally had if(enrolled)
             console.log(`Someone is already registered with ${student.email}`)
         } else {
             this.students = this.students.concat(student);
-            console.log(`Registering ${student.email} to the ${this.name} bootcamp.`)
+            console.log(`Registering ${student.email} to the 
+            ${this.name} bootcamp.`)
         }
         return this.students;
     }
@@ -30,13 +33,13 @@ class Bootcamp {
 
 const jose = new Student('Jose', 'joe@gmail.com', 'JS')
 const andrew = new Student('Andrew', 'andy@gmail.com', 'Java')
-const amanda = new Student('Amanda', 'manda@gmail.com', 'Python')
+const amanda = new Student('Amanda', 'amanda@gmail.com', 'Python')
 
 const nucamp = new Bootcamp('React', 2)
 
 nucamp.registerStudent(jose);
 nucamp.registerStudent(andrew);
-nucamp.registerStudent(jose);
-nucamp.registerStudent(amanda);
+nucamp.registerStudent(jose); //Someone is already registered with...
+console.log(nucamp.registerStudent(amanda)); //Returns student array
 
-console.log(nucamp.students)
+console.log(nucamp.students) //Final verification
