@@ -47,7 +47,8 @@ const computer = {
     },
     listSpec(spec) {
       spec = spec.toLowerCase();
-      return this.specs.hasOwnProperty(spec) ? this.specs[spec] : 'Spec could not be found'
+      return this.specs.hasOwnProperty(spec) ? this.specs[spec] 
+      : 'Spec could not be found'
     }
 }
   
