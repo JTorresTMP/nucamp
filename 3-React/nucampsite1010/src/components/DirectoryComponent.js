@@ -23,6 +23,7 @@ class DirectoryCls extends Component {
 
     renderSelectedCampsite(campsite) {
         if (campsite) {
+            console.log('nice')
             return (
                 <Card>
                     <CardImg top src={campsite.image} alt={campsite.name} />
@@ -33,6 +34,7 @@ class DirectoryCls extends Component {
                 </Card>
             );
         }
+        console.log('Something is not right')
         return <div />;
     }
 
