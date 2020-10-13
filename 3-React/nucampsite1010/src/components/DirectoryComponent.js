@@ -7,6 +7,7 @@ import {
     CardBody,
     CardTitle
 } from 'reactstrap'
+import CampsiteInfo from './CampsiteInfoComponent';
 
 
 class DirectoryCls extends Component {
@@ -58,12 +59,13 @@ class DirectoryCls extends Component {
                 <div className="row">
                     {directory}
                 </div>
-                <div className="row">
+                <CampsiteInfo campsite={this.state.selectedCampsite} />
+                {/* <div className="row">
                     <div className="col-md-5 m-1">
                         {console.log(this.state.selectedCampite)}
                         {this.renderSelectedCampsite(this.state.selectedCampsite)}
                     </div>
-                </div>
+                </div> */}
             </div>
         );
     }

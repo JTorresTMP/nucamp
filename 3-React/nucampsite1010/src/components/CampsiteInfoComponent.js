@@ -7,6 +7,15 @@ class CampsiteInfo extends React.Component {
 
 
     render () {
+        if(this.props.campsite !== null) {
+            console.log('nice, this exists')
+            return <div className='row' />
+        } else {
+            return <div />
+        }
+
         
     }
 }
+
+export default CampsiteInfo;
