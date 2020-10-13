@@ -3,10 +3,9 @@ import {
     Card,
     CardImg,
     CardImgOverlay,
-    CardText,
-    CardBody,
     CardTitle
 } from 'reactstrap'
+import CampsiteInfo from './CampInfoComp'
 
 
 const Directory = ({campsites}) => {
@@ -17,22 +16,6 @@ const Directory = ({campsites}) => {
         setSelectedCamp(campsite)
     }
 
-    const renderSelectedCampsite = (campsite) => {
-        console.log(campsite)
-        if (campsite) {
-            return (
-                <Card>
-                    <CardImg top src={campsite.image} alt={campsite.name} />
-                    <CardBody>
-                        <CardTitle>{campsite.name}</CardTitle>
-                        <CardText>{campsite.description}</CardText>
-                    </CardBody>
-                </Card>
-            );
-        }
-        return <div />
-    }
-
     return (
         <div className="container">
             <div className="row">
@@ -41,11 +24,7 @@ const Directory = ({campsites}) => {
                     onCampSiteSelect={onCampSiteSelect} /> //Gotta pass in cb
                 })}
             </div>
-            <div className="row">
-                <div className="col-md-5 m-1">
-                    {renderSelectedCampsite(selectedCamp)}
-                </div>
-            </div>
+            <CampsiteInfo campsite={selectedCamp} />
         </div>
     )
 }

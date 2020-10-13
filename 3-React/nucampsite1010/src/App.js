@@ -43,4 +43,4 @@ const FuncApp = () => {
   );
 }
 
-export default App;
+export default FuncApp;
