@@ -39,7 +39,7 @@ const Ext = {
 
 const Directory = () => {
     const [campsites, setCampsites] = useState(Ext);
-
+    console.table(campsites.campsites) //Console.table is magical
     return (
         <div className="container">
             <div className="row">
