@@ -26,10 +26,37 @@ class CampsiteInfo extends React.Component {
         )
     } 
 
+    renderComments(comments) {
+        if (comments) {
+            return (
+                <div className='col-md-5 m-1'>
+                    <h4>Comments</h4>
+                    {comments.map(comment => {
+                        return (
+                            <>
+                                <p>{comment.text}</p>
+                                <p>- {comment.author} {' '}
+                                {new Intl.DateTimeFormat('en-US', 
+                                { year: 'numeric', month: 'short', day: '2-digit'})
+                                .format(new Date(Date.parse(comment.date)))}</p>
+                            </>
+                        )
+                    })}
+                </div>
+            )
+        }
+        return <div></div>
+    }
+
     render () {
         if(this.props.campsite !== null) {
             console.log('nice, this exists')
-            return <div className='row'>{this.renderCampsite(this.props.campsite)}</div>
+            return (
+                <div className='row'>
+                    {this.renderCampsite(this.props.campsite)}
+                    {this.renderComments(this.props.campsite.comments)}
+                </div>
+            )
         } else {
             return <div />
         }
