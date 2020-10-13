@@ -18,6 +18,7 @@ const Directory = ({campsites}) => {
     }
 
     const renderSelectedCampsite = (campsite) => {
+        console.log(campsite)
         if (campsite) {
             return (
                 <Card>

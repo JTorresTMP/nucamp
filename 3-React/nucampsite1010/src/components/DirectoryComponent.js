@@ -13,15 +13,16 @@ class DirectoryCls extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedCampite: null
+            selectedCampsite: null
         };
     }
 
     onCampsiteSelect(campsite) {
-        this.setState({selectedCampite: campsite})
+        this.setState({selectedCampsite: campsite})
     }
 
     renderSelectedCampsite(campsite) {
+        console.log('kk', campsite)
         if (campsite) {
             console.log('nice')
             return (
@@ -40,7 +41,6 @@ class DirectoryCls extends Component {
 
 
     render() {
-        console.log('Selected...', this.state.selectedCampite)
         const directory = this.props.campsites.map(campsite => {
             return (
                 <div key={campsite.id} className="col-md-5 m-1">
@@ -60,6 +60,7 @@ class DirectoryCls extends Component {
                 </div>
                 <div className="row">
                     <div className="col-md-5 m-1">
+                        {console.log(this.state.selectedCampite)}
                         {this.renderSelectedCampsite(this.state.selectedCampsite)}
                     </div>
                 </div>
