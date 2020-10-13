@@ -3,8 +3,6 @@ import {
     Card,
     CardImg,
     CardImgOverlay,
-    CardText,
-    CardBody,
     CardTitle
 } from 'reactstrap'
 import CampsiteInfo from './CampsiteInfoComponent';
@@ -21,25 +19,6 @@ class DirectoryCls extends Component {
     onCampsiteSelect(campsite) {
         this.setState({selectedCampsite: campsite})
     }
-
-    renderSelectedCampsite(campsite) {
-        console.log('kk', campsite)
-        if (campsite) {
-            console.log('nice')
-            return (
-                <Card>
-                    <CardImg top src={campsite.image} alt={campsite.name} />
-                    <CardBody>
-                        <CardTitle>{campsite.name}</CardTitle>
-                        <CardText>{campsite.description}</CardText>
-                    </CardBody>
-                </Card>
-            );
-        }
-        console.log('Something is not right')
-        return <div />;
-    }
-
 
     render() {
         const directory = this.props.campsites.map(campsite => {
@@ -60,12 +39,6 @@ class DirectoryCls extends Component {
                     {directory}
                 </div>
                 <CampsiteInfo campsite={this.state.selectedCampsite} />
-                {/* <div className="row">
-                    <div className="col-md-5 m-1">
-                        {console.log(this.state.selectedCampite)}
-                        {this.renderSelectedCampsite(this.state.selectedCampsite)}
-                    </div>
-                </div> */}
             </div>
         );
     }
