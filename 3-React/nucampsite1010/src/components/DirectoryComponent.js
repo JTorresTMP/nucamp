@@ -36,7 +36,9 @@ class DirectoryCls extends Component {
         return <div />;
     }
 
+
     render() {
+        console.log('Selected...', this.state.selectedCampite)
         const directory = this.props.campsites.map(campsite => {
             return (
                 <div key={campsite.id} className="col-md-5 m-1">
