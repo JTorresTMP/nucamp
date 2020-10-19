@@ -6,7 +6,7 @@ import './App.css';
 import { CAMPSITES } from './shared/campsites';
 import MainCLS from './components/MainComponent'
 import NavbarComponent from './components/functionalApproach/NavbarComp'
-
+import Main from './components/functionalApproach/MainComp'
 
 class App extends React.Component {
   // constructor(props) {
@@ -32,16 +32,17 @@ class App extends React.Component {
 
 
 const FuncApp = () => {
-  const [campsites, setCampsites] = React.useState({
-    campsites: CAMPSITES
-  })
+  // const [campsites, setCampsites] = React.useState({
+  //   campsites: CAMPSITES
+  // })
 
   return (
     <div className="App">
-      <NavbarComponent />
-      <Directory campsites={campsites.campsites}/>
+      <Main />
+      {/* <NavbarComponent />
+      <Directory campsites={campsites.campsites}/> */}
     </div>
   );
 }
 
-export default App;
+export default FuncApp;
