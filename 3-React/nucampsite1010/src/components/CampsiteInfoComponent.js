@@ -33,13 +33,13 @@ class CampsiteInfo extends React.Component {
                     <h4>Comments</h4>
                     {comments.map(comment => {
                         return (
-                            <>
+                            <div key={comment.text}>
                                 <p>{comment.text}</p>
                                 <p>- {comment.author} {' '}
                                 {new Intl.DateTimeFormat('en-US', 
                                 { year: 'numeric', month: 'short', day: '2-digit'})
                                 .format(new Date(Date.parse(comment.date)))}</p>
-                            </>
+                            </div>
                         )
                     })}
                 </div>
@@ -49,15 +49,18 @@ class CampsiteInfo extends React.Component {
     }
 
     render () {
-        if(this.props.campsite !== null) {
+        if(this.props.campsite) {
             console.log('nice, this exists')
             return (
-                <div className='row'>
-                    {this.renderCampsite(this.props.campsite)}
-                    {this.renderComments(this.props.campsite.comments)}
+                <div className="container">
+                    <div className="row">
+                        {this.renderCampsite(this.props.campsite)}
+                        {this.renderComments(this.props.campsite.comments)}
+                    </div>
                 </div>
             )
         } else {
+            console.log('hmm', this.props.campsite)
             return <div />
         }
     }
