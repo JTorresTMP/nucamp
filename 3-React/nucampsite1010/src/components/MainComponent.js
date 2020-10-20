@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import DirectoryCLS from './DirectoryComponent';
 import CampsiteInfoCLS from './CampsiteInfoComponent';
 import { CAMPSITES } from '../shared/campsites'
+import Header from './HeaderComponent'
+import Footer from './FooterComponent'
+import Home from './HomeComponent';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {
     constructor(props) {
@@ -18,17 +21,23 @@ class Main extends Component {
     }
 
     render() {
+
+        const HomePage = () => {
+            return <Home />
+        }
         // console.log('In state', this.state.selectedCampsite)
         // console.log('Filtered:', this.state.campsites.filter(campsite => campsite.id === this.state.selectedCampsite))
         return (
             <div>
-                <Navbar dark color="primary">
-                    <div className="container">
-                        <NavbarBrand href="/">NuCamp</NavbarBrand>
-                    </div>
-                </Navbar>
-                <DirectoryCLS campsites={this.state.campsites} onClick={campsiteId => this.onCampsiteSelect(campsiteId.id)}/>
-                <CampsiteInfoCLS campsite={this.state.campsites.filter(campsite => campsite.id === this.state.selectedCampsite)[0]} />
+                <Header />
+                <Switch>
+                    <Route path='/home' component={HomePage} />
+                    <Route exact path='/directory' render={() => <DirectoryCLS campsites={this.state.campsites} />} />
+                    <Redirect to='/home' />
+                </Switch>
+                {/* <DirectoryCLS campsites={this.state.campsites} onClick={campsiteId => this.onCampsiteSelect(campsiteId)}/>
+                <CampsiteInfoCLS campsite={this.state.campsites.filter(campsite => campsite.id === this.state.selectedCampsite)[0]} /> */}
+                <Footer />
             </div>
         );
     };

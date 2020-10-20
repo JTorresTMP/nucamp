@@ -62,7 +62,7 @@ function CampsiteInfo(props) {
 
 
 
-// class CampsiteInfo extends React.Component {
+// class CampsiteInfoCLS extends React.Component {
 //     constructor(props) {
 //         super(props)
 //     }

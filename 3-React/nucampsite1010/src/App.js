@@ -7,6 +7,7 @@ import { CAMPSITES } from './shared/campsites';
 import MainCLS from './components/MainComponent'
 import NavbarComponent from './components/functionalApproach/NavbarComp'
 import Main from './components/functionalApproach/MainComp'
+import { BrowserRouter } from 'react-router-dom'
 
 class App extends React.Component {
   // constructor(props) {
@@ -17,15 +18,11 @@ class App extends React.Component {
   // }
   render() {
   return (
-    <div className="App">
-      <MainCLS />
-      {/* <Navbar dark color={'primary'}>
-        <div className={'container'}>
-          <NavbarBrand href={'/'}>Nucamp</NavbarBrand>
-        </div>
-      </Navbar>
-      <DirectoryCls campsites={this.state.campsites}/> */}
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <MainCLS />
+      </div>
+    </BrowserRouter>
   );
   }
 }
@@ -45,4 +42,4 @@ const FuncApp = () => {
   );
 }
 
-export default FuncApp;
+export default App;
