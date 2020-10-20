@@ -34,12 +34,12 @@ const FuncApp = () => {
   // })
 
   return (
-    <div className="App">
-      <Main />
-      {/* <NavbarComponent />
-      <Directory campsites={campsites.campsites}/> */}
-    </div>
+      <BrowserRouter>
+        <div className="App">
+          <Main />
+        </div>
+      </BrowserRouter>
   );
 }
 
-export default App;
+export default FuncApp;
