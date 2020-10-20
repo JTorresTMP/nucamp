@@ -11,6 +11,9 @@ import Home from './HomeComponent';
 import Contact from './ContactComponent'
 import { Switch, Route, Redirect } from 'react-router-dom';
 
+
+
+
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -38,6 +41,14 @@ class Main extends Component {
                 />
             )
         }
+        const CampsiteWithId = ({match}) => {
+            return (
+                <CampsiteInfoCLS 
+                    campsite={this.state.campsites.filter(campsite => campsite.id === +match.params.campsiteId)[0]}
+                    comments={this.state.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)}
+                />
+            );
+        };  
         // console.log('In state', this.state.selectedCampsite)
         // console.log('Filtered:', this.state.campsites.filter(campsite => campsite.id === this.state.selectedCampsite))
         return (
@@ -47,6 +58,7 @@ class Main extends Component {
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/directory' render={() => <DirectoryCLS campsites={this.state.campsites} />} />
                     <Route exact path='/contactus' component={Contact} />
+                    <Route path='/directory/:campsiteId' component={CampsiteWithId} />
                     <Redirect to='/home' />
                 </Switch>
                 {/* <DirectoryCLS campsites={this.state.campsites} onClick={campsiteId => this.onCampsiteSelect(campsiteId)}/>
