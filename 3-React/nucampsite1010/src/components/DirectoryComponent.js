@@ -3,7 +3,9 @@ import {
     Card,
     CardImg,
     CardImgOverlay,
-    CardTitle
+    CardTitle,
+    Breadcrumb,
+    BreadcrumbItem
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import CampsiteInfo from './CampsiteInfoComponent';
@@ -32,6 +34,16 @@ function Directory(props) {
 
     return (
         <div className="container">
+            <div className="row">
+                <div className="col">
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>Directory</BreadcrumbItem>
+                    </Breadcrumb>
+                    <h2>Directory</h2>
+                    <hr />
+                </div>
+            </div>
             <div className="row">
                 {directory}
             </div>
