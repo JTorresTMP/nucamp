@@ -48,6 +48,7 @@ function RenderComments({comments}) {
 
 
 function CampsiteInfo(props) {
+    console.log('Props', props)
     if (props.campsite) {
         return (
             <div className="container">

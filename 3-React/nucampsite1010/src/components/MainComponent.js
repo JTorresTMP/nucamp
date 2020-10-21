@@ -42,6 +42,7 @@ class Main extends Component {
             )
         }
         const CampsiteWithId = ({match}) => {
+            console.log('match', match)
             return (
                 <CampsiteInfoCLS 
                     campsite={this.state.campsites.filter(campsite => campsite.id === +match.params.campsiteId)[0]}
