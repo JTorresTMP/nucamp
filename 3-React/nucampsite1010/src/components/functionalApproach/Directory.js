@@ -5,7 +5,7 @@ import {
     CardImgOverlay,
     CardTitle
 } from 'reactstrap'
-import CampsiteInfo from './CampInfoComp'
+import CampsiteInfo from './CampInfo'
 
 
 const Directory = ({campsites}) => {

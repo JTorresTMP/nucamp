@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import Directory from './DirectoryComp'
-import CampsiteInfo from './CampInfoComp'
+import Directory from './Directory'
+import CampsiteInfo from './CampInfo'
 import NavbarComp from './NavbarComp'
 import { CAMPSITES } from '../../shared/campsites'
 import { COMMENTS } from '../../shared/comments'
 import { PARTNERS } from '../../shared/partners'
 import { PROMOTIONS } from '../../shared/promotions'
-import Header from './HeaderComp'
-import Footer from './FooterComp'
-import Home from './HomeComp'
-import Contact from './ContactComp'
+import Header from './Header'
+import Footer from './Footer'
+import Home from './Home'
+import Contact from './Contact'
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 const Main = (props) => {

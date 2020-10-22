@@ -1,12 +1,12 @@
 import React from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap'
 import DirectoryCls from './components/DirectoryComponent'
-import Directory from './components/functionalApproach/DirectoryComp'
+import Directory from './components/functionalApproach/Directory'
 import './App.css';
 import { CAMPSITES } from './shared/campsites';
 import MainCLS from './components/MainComponent'
 import NavbarComponent from './components/functionalApproach/NavbarComp'
-import Main from './components/functionalApproach/MainComp'
+import Main from './components/functionalApproach/Main'
 import { BrowserRouter } from 'react-router-dom'
 
 class App extends React.Component {
