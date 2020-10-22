@@ -32,7 +32,7 @@ const NavbarComponent = ({isNavOpen, toggleNav}) => {
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/aboutus">
+                                <NavLink className="nav-link" to="/about">
                                     <i className="fa fa-info fa-lg" /> About
                                 </NavLink>
                             </NavItem>

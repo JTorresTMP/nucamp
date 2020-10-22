@@ -3,7 +3,9 @@ import {
     Card,
     CardImg,
     CardImgOverlay,
-    CardTitle
+    CardTitle,
+    Breadcrumb,
+    BreadcrumbItem
 } from 'reactstrap'
 import CampsiteInfo from './CampInfo'
 import { Link } from 'react-router-dom'
@@ -18,6 +20,16 @@ const Directory = ({campsites}) => {
 
     return (
         <div className="container">
+            <div className="row">
+                <div className="col">
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>Directory</BreadcrumbItem>
+                    </Breadcrumb>
+                    <h2>Directory</h2>
+                    <hr />
+                </div>
+            </div>
             <div className="row">
                 {campsites.map(camp => {
                     return <CampGrid key={camp.id} campsite={camp} 

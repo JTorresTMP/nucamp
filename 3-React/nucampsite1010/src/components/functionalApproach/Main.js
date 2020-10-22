@@ -10,6 +10,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Home from './Home'
 import Contact from './Contact'
+import About from './About'
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 const Main = (props) => {
@@ -62,6 +63,8 @@ const Main = (props) => {
                     render={() => <Directory campsites={campsites} />} />
                 <Route exact path='/contactus' component={Contact} />
                 <Route path='/directory/:campsiteId' component={CampsiteWithID} />
+                <Route exact path='/about' render={() => {
+                    return <About partners={partners} />}} />
                 <Redirect to='/home' />
             </Switch>
             <Footer />
