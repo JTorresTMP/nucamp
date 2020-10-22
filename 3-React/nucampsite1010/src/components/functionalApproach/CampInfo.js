@@ -1,8 +1,8 @@
 import React from 'react'
 import { Card, CardImg, CardTitle, CardText, CardBody } from 'reactstrap'
 
-const CampsiteInfo = ({campsite}) => {
-
+const CampsiteInfo = ({campsite, comments: commentz}) => {
+    console.log('Prop passed in: ', campsite, commentz)
     const renderCampsite = (campsite) => {
         return (
             <div className='col-md-5 m-1'>
@@ -45,7 +45,7 @@ const CampsiteInfo = ({campsite}) => {
         return (
             <div className='row'>
                 {renderCampsite(campsite)}
-                {renderComments(campsite.comments)}
+                {renderComments(commentz)}
             </div>
         )
     } else {

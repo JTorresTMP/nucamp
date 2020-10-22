@@ -6,11 +6,11 @@ import {
     CardTitle
 } from 'reactstrap'
 import CampsiteInfo from './CampInfo'
-
+import { Link } from 'react-router-dom'
 
 const Directory = ({campsites}) => {
     const [selectedCamp, setSelectedCamp] = useState(null)
-    console.table(campsites) //Console.table is magical
+    // console.table(campsites) //Console.table is magical
 
     const onCampSiteSelect = (campsite) => {
         setSelectedCamp(campsite)
@@ -33,10 +33,12 @@ const CampGrid = ({campsite, onCampSiteSelect}) => {
     return (
         <div className="col-md-5 m-1">
             <Card onClick={() => onCampSiteSelect(campsite)}>
+            <Link to={`/directory/${campsite.id}`}>
                 <CardImg width="100%" src={campsite.image} alt={campsite.name}/>
                 <CardImgOverlay>
                     <CardTitle>{campsite.name}</CardTitle>
                 </CardImgOverlay>
+            </Link>
             </Card>
         </div>
     )

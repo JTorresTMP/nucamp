@@ -43,10 +43,10 @@ const Main = (props) => {
             <div>
                 <CampsiteInfo
                     campsite={campsites.filter(campsite => {
-                        return campsite.id === +match.args.campsiteId
+                        return campsite.id === +match.params.campsiteId
                     })[0]}
                     comments={comments.filter(comment => {
-                        return comment.campsiteId === +match.args.campsiteId
+                        return comment.campsiteId === +match.params.campsiteId
                     })}
                 />
             </div>
@@ -62,6 +62,7 @@ const Main = (props) => {
                     render={() => <Directory campsites={campsites} />} />
                 <Route exact path='/contactus' component={Contact} />
                 <Route path='/directory/:campsiteId' component={CampsiteWithID} />
+                <Redirect to='/home' />
             </Switch>
             <Footer />
         </div>

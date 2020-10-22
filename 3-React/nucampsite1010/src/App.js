@@ -1,11 +1,11 @@
 import React from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap'
-import DirectoryCls from './components/DirectoryComponent'
-import Directory from './components/functionalApproach/Directory'
+// import { Navbar, NavbarBrand } from 'reactstrap'
+// import DirectoryCls from './components/DirectoryComponent'
+// import Directory from './components/functionalApproach/Directory'
 import './App.css';
-import { CAMPSITES } from './shared/campsites';
+// import { CAMPSITES } from './shared/campsites';
 import MainCLS from './components/MainComponent'
-import NavbarComponent from './components/functionalApproach/NavbarComp'
+// import NavbarComponent from './components/functionalApproach/NavbarComp'
 import Main from './components/functionalApproach/Main'
 import { BrowserRouter } from 'react-router-dom'
 
@@ -42,4 +42,4 @@ const FuncApp = () => {
   );
 }
 
-export default App;
+export default FuncApp;

@@ -62,8 +62,6 @@ class Main extends Component {
                     <Route path='/directory/:campsiteId' component={CampsiteWithId} />
                     <Redirect to='/home' />
                 </Switch>
-                {/* <DirectoryCLS campsites={this.state.campsites} onClick={campsiteId => this.onCampsiteSelect(campsiteId)}/>
-                <CampsiteInfoCLS campsite={this.state.campsites.filter(campsite => campsite.id === this.state.selectedCampsite)[0]} /> */}
                 <Footer />
             </div>
         );

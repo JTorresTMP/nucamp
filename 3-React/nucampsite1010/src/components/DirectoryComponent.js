@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
     Card,
     CardImg,
@@ -8,7 +8,7 @@ import {
     BreadcrumbItem
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import CampsiteInfo from './CampsiteInfoComponent';
+// import CampsiteInfo from './CampsiteInfoComponent';
 
 function RenderDirectoryItem({campsite}) {
     return (
