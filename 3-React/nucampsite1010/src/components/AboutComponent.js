@@ -13,7 +13,9 @@ import { Link } from 'react-router-dom';
 function About(props) {
     const partners = props.partners.map(partner => {
         return (
-            <h5>{partner.name}</h5>
+            <Media tag={'li'} key={partner.id}>
+                <RenderPartner partner={partner} />
+            </Media>
         );
     });
 
@@ -106,7 +108,7 @@ const RenderPartner = ({partner}) => {
     if (partner) {
         return (
             <div>
-                <Media object data-src={partner.image}
+                <Media object src={partner.image}
                 alt={partner.name} width={150} />
                 <Media body className={'ml-5 mb-4'}>
                     <Media heading >{partner.name}</Media>
