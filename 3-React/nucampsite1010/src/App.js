@@ -5,16 +5,11 @@ import Main from './components/functionalApproach/Main'
 import { BrowserRouter } from 'react-router-dom'
 
 class App extends React.Component {
-  // constructor(props) {
-  //     super(props);
-  //     this.state = {
-  //         campsites: CAMPSITES
-  //     };
-  // }
   render() {
   return (
     <BrowserRouter>
       <div className="App">
+        <h1>You are viewing the Class Implementation</h1>
         <MainCLS />
       </div>
     </BrowserRouter>
@@ -24,17 +19,14 @@ class App extends React.Component {
 
 
 const FuncApp = () => {
-  // const [campsites, setCampsites] = React.useState({
-  //   campsites: CAMPSITES
-  // })
-
   return (
       <BrowserRouter>
         <div className="App">
+          <h1>You are viewing the Functional Implementation</h1>
           <Main />
         </div>
       </BrowserRouter>
   );
 }
 
-export default FuncApp;
+export default App;
