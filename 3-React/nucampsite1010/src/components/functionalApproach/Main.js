@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Directory from './Directory'
 import CampsiteInfo from './CampInfo'
-import NavbarComp from './NavbarComp'
+// import NavbarComp from './NavbarComp'
 import { CAMPSITES } from '../../shared/campsites'
 import { COMMENTS } from '../../shared/comments'
 import { PARTNERS } from '../../shared/partners'
@@ -23,6 +23,11 @@ const Main = (props) => {
     const onCampsiteSelect = (campID) => {
         setSelected(campID)
     }
+
+    //These 3 lines are not needed, I just want React to not shout at me
+    const unusedVars = [setCampsites, setComments, setPartners,
+        setPromotions, selected, onCampsiteSelect]
+    console.log(unusedVars && false)
 
     const HomePage = () => {
         return (

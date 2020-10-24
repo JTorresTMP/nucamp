@@ -9,7 +9,9 @@ class App extends React.Component {
   return (
     <BrowserRouter>
       <div className="App">
-        <h1>You are viewing the Class Implementation</h1>
+        <h4 className="text-center">
+          You are viewing the Class Implementation
+        </h4>
         <MainCLS />
       </div>
     </BrowserRouter>
@@ -22,11 +24,13 @@ const FuncApp = () => {
   return (
       <BrowserRouter>
         <div className="App">
-          <h1>You are viewing the Functional Implementation</h1>
+          <h4 className="text-center">
+            You are viewing the Functional Implementation
+          </h4>
           <Main />
         </div>
       </BrowserRouter>
   );
 }
 
-export default App;
+export default FuncApp;
