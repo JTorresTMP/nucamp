@@ -6,9 +6,22 @@ import {
     // CardTitle,
     CardText,
     Breadcrumb,
-    BreadcrumbItem
+    BreadcrumbItem,
+    Button
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
+
+
+class CommentForm extends React.Component {
+    render () {
+        return (
+            <Button outline>
+                <i className="fa fa-pencil fa-lg"></i>{' '}
+                Submit Content
+            </Button>
+        )
+    }
+}
 
 function RenderCampsite({campsite}) {
     return (
@@ -40,6 +53,7 @@ function RenderComments({comments}) {
                         </div>
                     )
                 })}
+                <CommentForm />
             </div>
         )
     }
