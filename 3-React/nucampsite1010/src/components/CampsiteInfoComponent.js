@@ -13,7 +13,12 @@ import {
     ModalBody,
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import { Control, LocalForm } from 'react-redux-form'
+import { Control, LocalForm, Errors } from 'react-redux-form'
+
+//Review and make sure I understand
+const maxLen = (len) => val => !val || (val.length <= len);
+const minLen = (len) => val => val && (val.length >= len);
+
 
 //Week 4 Assignment
 class CommentForm extends React.Component {
@@ -52,7 +57,7 @@ class CommentForm extends React.Component {
                             <div className="form-group">
                                 <label htmlFor="rating">Rating</label>
                                 <Control.select model=".rating" name='rating'
-                                className='form-control'>
+                                className='form-control' id='rating'>
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -61,12 +66,22 @@ class CommentForm extends React.Component {
                                 </Control.select>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="author">Author</label>
+                                <label htmlFor="author">Your Name</label>
                                 <Control.text model='.author' name='author'
-                                className='form-control' />
+                                className='form-control' id='author'
+                                validators={{
+                                    minLength: minLen(2),
+                                    maxLength: maxLen(15)
+                                }}/>
+                                <Errors className='text-danger' model='.author'
+                                show='touched' component='div'
+                                messages={{
+                                    minLength: 'Must be at least 2 characters in length.',
+                                    maxLength: 'Must not be longer than 15 characters.'
+                                }} />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="text">Text</label>
+                                <label htmlFor="text">Comment</label>
                                 <Control.textarea model=".text" id="text"
                                 name="text" rows="4" className="form-control" />
                             </div>
