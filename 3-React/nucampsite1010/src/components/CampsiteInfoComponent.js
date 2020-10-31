@@ -48,9 +48,8 @@ class CommentForm extends React.Component {
                     Submit Comment
                 </Button>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader>
+                    <ModalHeader toggle={this.toggleModal}>
                         Submit Comment
-                        <Button close onClick={this.toggleModal} />
                     </ModalHeader>
                     <ModalBody>
                         <LocalForm onSubmit={this.handleSubmit}>
