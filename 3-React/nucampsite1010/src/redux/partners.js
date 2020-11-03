@@ -1,7 +1,7 @@
 import { PARTNERS } from '../shared/partners'
 import * as ActionTypes from './ActionTypes'
 
-export const Partners = (state = PARTNERS, action) => {
+export const Partners = (state = { isLoading: true, errMsg: null, partners: []}, action) => {
     switch (action.type) {
         case ActionTypes.ADD_PARTNERS:
             return state;
