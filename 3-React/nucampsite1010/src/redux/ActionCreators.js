@@ -87,6 +87,27 @@ export const fetchComments = () => dispatch => {
         .catch(error => dispatch(commentsFailed(error.message)));
 };
 
+export const fetchPartners = () => dispatch => {
+    return fetch(baseUrl + 'partners')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMsg = new Error(error.message);
+        throw errMsg;
+    })
+    .then(res => res.json())
+    .then(partners => dispatch(addPartners(partners)))
+    .catch(error => dispatch(partnersFailed(error.message)))
+}
+
+
 export const commentsFailed = errMess => ({
     type: ActionTypes.COMMENTS_FAILED,
     payload: errMess
@@ -149,3 +170,17 @@ export const addPromotions = promotions => ({
     type: ActionTypes.ADD_PROMOTIONS,
     payload: promotions
 });
+
+export const addPartners = partners => ({
+    type: ActionTypes.ADD_PARTNERS,
+    payload: partners
+})
+
+export const partnersLoading = () => ({
+    type: ActionTypes.PARTNERS_LOADING
+})
+
+export const partnersFailed = errMsg => ({
+    type: ActionTypes.PARTNERS_FAILED,
+    payload: errMsg
+})
