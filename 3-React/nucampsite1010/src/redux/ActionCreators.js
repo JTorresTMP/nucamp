@@ -104,6 +104,7 @@ export const fetchPartners = () => dispatch => {
     })
     .then(res => res.json())
     .then(partners => dispatch(addPartners(partners)))
+    .then(res => console.log('This succeeded'))
     .catch(error => dispatch(partnersFailed(error.message)))
 }
 
@@ -180,7 +181,7 @@ export const partnersLoading = () => ({
     type: ActionTypes.PARTNERS_LOADING
 })
 
-export const partnersFailed = errMsg => ({
+export const partnersFailed = errMess => ({
     type: ActionTypes.PARTNERS_FAILED,
-    payload: errMsg
+    payload: errMess
 })
