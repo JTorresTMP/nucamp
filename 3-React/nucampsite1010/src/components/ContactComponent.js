@@ -59,7 +59,8 @@ class Contact extends React.Component {
 
     handleSubmit(values) {
         console.log("Current state is: " + JSON.stringify(values));
-        alert("Current state is: " + JSON.stringify(values));
+        this.props.postFeedback(values);
+        // alert("Current state is: " + JSON.stringify(values));
         this.props.resetFeedbackForm();
     }
     // handleSubmit(event) {
@@ -69,6 +70,7 @@ class Contact extends React.Component {
     // }
 
     render () {
+        console.log('Contact Props', this.props)
         // const errors = this.validate(this.state.firstName, this.state.lastName, this.state.phoneNum, this.state.email);   
         return (
             <div className="container">
