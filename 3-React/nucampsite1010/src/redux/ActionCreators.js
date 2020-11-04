@@ -44,8 +44,9 @@ export const postComment = (campsiteId, rating, author, text) => dispatch => {
 };
 
 export const postFeedback = (feedback) => {
-    
-    // console.log(feedback)
+    //feedback is undefined... why
+    console.log('Just making sure this is actually being called')
+    console.log(feedback)
 
     return fetch(baseUrl + 'feedback', {
         method: 'POST',
@@ -56,6 +57,7 @@ export const postFeedback = (feedback) => {
     })
     .then(res => {
         if (res.ok) {
+            console.log(res)
             return res;
         } else {
             const error = new Error(`StatusCode: ${res.status}, ${res.statusText}`)
@@ -64,12 +66,12 @@ export const postFeedback = (feedback) => {
         }
     }, 
     error => {throw error})
-    .then(response => response.json())
-    .then(res => alert(`Thank you for your feedback, it is ${res}`))
-    .catch(error => {
-        console.log('Error: ', error.message);
-        alert(`There was an issue yo`)
-    })
+    // .then(response => response.json())
+    // // .then(res => alert(`Thank you for your feedback, it is ${res}`))
+    // .catch(error => {
+    //     console.log('Error: ', error.message);
+    //     alert(`There was an issue yo`)
+    // })
 }
 
 
