@@ -8,16 +8,17 @@ import {
     Media 
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
-
+import { baseUrl } from '../shared/baseUrl'
+import { Loading } from './LoadingComponent';
 
 function About(props) {
-    const partners = props.partners.map(partner => {
-        return (
-            <Media tag={'li'} key={partner.id}>
-                <RenderPartner partner={partner} />
-            </Media>
-        );
-    });
+    // const partners = props.partners.map(partner => {
+    //     return (
+    //         <Media tag={'li'} key={partner.id}>
+    //             <RenderPartner partner={partner} />
+    //         </Media>
+    //     );
+    // });
 
     return (
         <div className="container">
@@ -95,9 +96,10 @@ function About(props) {
                     <h3>Community Partners</h3>
                 </div>
                 <div className="col mt-4">
-                    <Media list>
+                    <PartnerList partners={props.partners}/>
+                    {/* <Media list>
                         {partners}
-                    </Media>
+                    </Media> */}
                 </div>
             </div>
         </div>
@@ -108,7 +110,7 @@ const RenderPartner = ({partner}) => {
     if (partner) {
         return (
             <>
-                <Media object src={partner.image}
+                <Media object src={baseUrl + partner.image}
                 alt={partner.name} width={150} />
                 <Media body className={'ml-5 mb-4'}>
                     <Media heading >{partner.name}</Media>
@@ -120,5 +122,35 @@ const RenderPartner = ({partner}) => {
     return <div />
 }
 
+const PartnerList = (props) => {
+    console.log('PartnerList props', props)
+    const partners = props.partners.partners.map(partner => {
+        return (
+            <Media tag={'li'} key={partner.id}>
+                <RenderPartner partner={partner} />
+            </Media>
+        );
+    });
+
+    if (props.partners.isLoading) {
+        return <Loading />
+    }
+
+    if (props.partners.errMess) {
+        return (
+            <div className="col">
+                <h4>{props.partners.errMess}</h4>
+            </div>
+        )
+    }
+
+    return (
+        <div className="col mt-4">
+            <Media list>
+                {partners}
+            </Media>
+        </div>
+    )
+}
 
 export default About;
