@@ -1,5 +1,6 @@
 import * as ActionTypes from './ActionTypes'
 import { baseUrl } from '../shared/baseUrl'
+import axios from 'axios'
 
 
 export const addComment = comment => ({
@@ -48,35 +49,32 @@ export const postFeedback = (feedback) => {
     console.log('Just making sure this is actually being called')
     console.log(feedback)
 
-    // const objectTo = {
-    //     firstName: feedback.firstName,
-    //     lastName: feedback.lastName,
-    //     phoneNum: feedback.phoneNum,
-    //     email: feedback.email,
-    //     agree: feedback.agree,
-    //     contactType: feedback.contactType,
-    //     Phone: feedback.Phone,
-    //     feedback: feedback.feedback
-    // }
-
-    return fetch(baseUrl + 'feedback', {
-        method: 'POST',
-        body: JSON.stringify(feedback),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
+    axios.post(baseUrl + 'feedback', feedback)
     .then(res => {
-        if (res.ok) {
-            console.log(res)
-            return res;
-        } else {
-            const error = new Error(`StatusCode: ${res.status}, ${res.statusText}`)
-            error.response = res;
-            throw error;
-        }
-    }, 
-    error => {throw error})
+        console.log(res)
+        alert('Thank you for your feedback!')
+        return res;
+    })
+    .catch(err => alert(`There was an error: ${err}`))
+
+    // return fetch(baseUrl + 'feedback', {
+    //     method: 'POST',
+    //     body: JSON.stringify(feedback),
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     }
+    // })
+    // .then(res => {
+    //     if (res.ok) {
+    //         console.log(res)
+    //         return res;
+    //     } else {
+    //         const error = new Error(`StatusCode: ${res.status}, ${res.statusText}`)
+    //         error.response = res;
+    //         throw error;
+    //     }
+    // }, 
+    // error => {throw error})
     // .then(response => response.json())
     // // .then(res => alert(`Thank you for your feedback, it is ${res}`))
     // .catch(error => {

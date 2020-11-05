@@ -58,9 +58,7 @@ class Contact extends React.Component {
     }
 
     handleSubmit(values) {
-        alert("Current state is: " + JSON.stringify(values));
         console.log('Why is this not running', {...values})
-        alert(typeof values)
         this.props.postFeedback(values);
         // alert("Current state is: " + JSON.stringify(values));
         this.props.resetFeedbackForm();
