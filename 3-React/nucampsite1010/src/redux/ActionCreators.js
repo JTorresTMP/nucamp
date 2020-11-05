@@ -47,7 +47,7 @@ export const postComment = (campsiteId, rating, author, text) => dispatch => {
 export const postFeedback = (feedback) => {
     //feedback is undefined
     console.log('Just making sure this is actually being called')
-    console.log(feedback)
+    // console.log(feedback)
 
     axios.post(baseUrl + 'feedback', feedback)
     .then(res => {
