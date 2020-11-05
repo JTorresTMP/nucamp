@@ -26,8 +26,8 @@ const mapDispatchToProps = {
     fetchComments: () => (fetchComments()),
     fetchPromotions: () => (fetchPromotions()),
     fetchPartners: () => (fetchPartners()),
-    postFeedback: () => (postFeedback()), //Think this is why there is an issue, if we are not sending an action, why not
-    //map it as state
+    // postFeedback: () => (postFeedback()), //Think this is why there is an issue, if we are not sending an action, why not
+    // //map it as state
 }
 
 
@@ -36,7 +36,8 @@ const mapStateToProps = state => {
         campsites: state.campsites,
         comments: state.comments,
         partners: state.partners,
-        promotions: state.promotions
+        promotions: state.promotions,
+        postFeedback: () => (postFeedback())
     };
 };
 

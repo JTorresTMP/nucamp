@@ -15,7 +15,7 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="App">
           <h4 className="text-center">
-            You are viewing the Class Implementation
+            You are viewing the Class Implementation (New Branch)
           </h4>
           <MainCLS />
         </div>

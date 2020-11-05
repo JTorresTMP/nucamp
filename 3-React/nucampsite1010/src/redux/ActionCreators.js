@@ -44,9 +44,20 @@ export const postComment = (campsiteId, rating, author, text) => dispatch => {
 };
 
 export const postFeedback = (feedback) => {
-    //feedback is undefined... why
+    //feedback is undefined
     console.log('Just making sure this is actually being called')
     console.log(feedback)
+
+    // const objectTo = {
+    //     firstName: feedback.firstName,
+    //     lastName: feedback.lastName,
+    //     phoneNum: feedback.phoneNum,
+    //     email: feedback.email,
+    //     agree: feedback.agree,
+    //     contactType: feedback.contactType,
+    //     Phone: feedback.Phone,
+    //     feedback: feedback.feedback
+    // }
 
     return fetch(baseUrl + 'feedback', {
         method: 'POST',

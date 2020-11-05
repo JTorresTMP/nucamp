@@ -200,6 +200,13 @@
       "text": "Testing",
       "date": "2020-11-03T04:11:18.944Z",
       "id": 20
+    },
+    {
+      "campsiteId": 0,
+      "author": "Jose ",
+      "text": "This is another test",
+      "date": "2020-11-05T17:08:49.969Z",
+      "id": 21
     }
   ],
   "partners": [
