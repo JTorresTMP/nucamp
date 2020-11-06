@@ -26,7 +26,7 @@ const mapDispatchToProps = {
     fetchComments: () => (fetchComments()),
     fetchPromotions: () => (fetchPromotions()),
     fetchPartners: () => (fetchPartners()),
-    postFeedback: () => (postFeedback()), //Think this is why there is an issue, if we are not sending an action, why not
+    postFeedback: (values) => postFeedback(values), //Think this is why there is an issue, if we are not sending an action, why not
     //map it as state
 }
 

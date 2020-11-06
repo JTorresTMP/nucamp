@@ -43,7 +43,7 @@ export const postComment = (campsiteId, rating, author, text) => dispatch => {
         });
 };
 
-export const postFeedback = (feedback) => {
+export const postFeedback = (feedback) => dispatch => {
     //feedback is undefined... why
     console.log('Just making sure this is actually being called')
     console.log(feedback)
@@ -58,6 +58,7 @@ export const postFeedback = (feedback) => {
     .then(res => {
         if (res.ok) {
             console.log(res)
+            alert(`Thank you for your feedback!`)
             return res;
         } else {
             const error = new Error(`StatusCode: ${res.status}, ${res.statusText}`)

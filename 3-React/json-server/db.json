@@ -251,6 +251,26 @@
       "agree": true,
       "contactType": "Email",
       "feedback": "test"
+    },
+    {
+      "firstName": "Jose",
+      "lastName": "Torres",
+      "phoneNum": "1111111111",
+      "email": "jose.torres@ultra.me",
+      "agree": true,
+      "contactType": "By Email",
+      "feedback": "This is a test.",
+      "id": 1
+    },
+    {
+      "firstName": "Jose",
+      "lastName": "Torres",
+      "phoneNum": "1111111111",
+      "email": "jose.torres@ultra.me",
+      "agree": false,
+      "contactType": "Phone",
+      "feedback": "adqsdadqd",
+      "id": 2
     }
   ]
 }
