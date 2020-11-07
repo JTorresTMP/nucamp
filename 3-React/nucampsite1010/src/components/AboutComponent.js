@@ -124,7 +124,7 @@ const RenderPartner = ({partner}) => {
 }
 
 const PartnerList = (props) => {
-    console.log('PartnerList props', props)
+    console.log('PartnerList props', props) // not needed
     const partners = props.partners.partners.map(partner => {
         return (
             <Fade in key={partner.id}>
@@ -132,7 +132,6 @@ const PartnerList = (props) => {
                     <RenderPartner partner={partner} />
                 </Media>
             </Fade>
-
         );
     });
 
