@@ -68,8 +68,7 @@ export const postFeedback = (feedback) => dispatch => {
     .then(res => {
         if (res.ok) {
             console.log(res)
-            alert(`Thank you for your feedback!`)
-            alert(JSON.stringify(feedback))
+            alert(`Thank you for your feedback! ${JSON.stringify(feedback)}`)
             return res;
         } else {
             const error = new Error(`StatusCode: ${res.status}, ${res.statusText}`)
@@ -78,12 +77,6 @@ export const postFeedback = (feedback) => dispatch => {
         }
     }, 
     error => {throw error})
-    // .then(response => response.json())
-    // // .then(res => alert(`Thank you for your feedback, it is ${res}`))
-    // .catch(error => {
-    //     console.log('Error: ', error.message);
-    //     alert(`There was an issue yo`)
-    // })
 }
 
 
