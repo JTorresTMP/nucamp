@@ -69,6 +69,7 @@ export const postFeedback = (feedback) => dispatch => {
         if (res.ok) {
             console.log(res)
             alert(`Thank you for your feedback!`)
+            alert(JSON.stringify(feedback))
             return res;
         } else {
             const error = new Error(`StatusCode: ${res.status}, ${res.statusText}`)
