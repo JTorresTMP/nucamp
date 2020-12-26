@@ -1,0 +1,17 @@
+{
+    "name": "node-express",
+    "version": "1.0.0",
+    "description": "\"Using express instead of http\"",
+    "main": "server.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "node server",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon server"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.6"
+    }
+}
