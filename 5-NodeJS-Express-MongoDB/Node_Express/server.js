@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const campsiteRouter = require('./routes/campsites');
 const port = 3210;
 
 app.use(morgan('tiny'));
-
+app.use(express.json());
 app.use(express.static(__dirname + '/public'));
+
+app.use('/campsites', campsiteRouter);
 
 app.use((req, res) => {
     console.log(req.headers);
