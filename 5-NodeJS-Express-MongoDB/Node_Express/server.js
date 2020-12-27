@@ -3,6 +3,7 @@ const app = express();
 const morgan = require('morgan');
 const campsiteRouter = require('./routes/campsites');
 const promotionsRouter = require('./routes/promotions');
+const partnersRouter = require('./routes/partners');
 const port = 3210;
 
 app.use(morgan('tiny'));
@@ -11,6 +12,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/campsites', campsiteRouter);
 app.use('/promotions', promotionsRouter);
+app.use('/partners', partnersRouter);
 
 app.use((req, res) => {
     console.log(req.headers);
