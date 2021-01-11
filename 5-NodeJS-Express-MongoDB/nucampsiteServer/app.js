@@ -27,6 +27,9 @@ connect.then(
     (err) => console.log(err)
 );
 
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
 const auth = (req, res, next) => {
     console.log(req.headers);
     const authHeader = req.headers.authorization;
@@ -67,8 +70,6 @@ app.use(cookieParser());
 app.use(auth);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/campsites', campsiteRouter);
 app.use('/promotions', promotionRouter);
 app.use('/partners', partnerRouter);
