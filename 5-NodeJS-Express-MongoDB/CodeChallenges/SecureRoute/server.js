@@ -3,27 +3,42 @@ const port = 3003;
 const secretsRouter = require('./routes/secretsRouter');
 const app = express();
 
-const authorization = (req, res, next) => {
-    const header = req.headers.authorization;
-    const createError = () => {
-        const err = new Error('You are not authorized to view this resource');
-        res.setHeader('WWW-Authenticate', 'Basic');
-        err.status = 401;
-        return next(err);
-    };
+app.use(cookieParser('12345-67890-09876-54321'));
 
-    if (!header) createError();
+function auth(req, res, next) {
+    if (!req.signedCookies.user) {
+        const authHeader = req.headers.authorization;
+        if (!authHeader) {
+            const err = new Error('You are not authenticated!');
+            res.setHeader('WWW-Authenticate', 'Basic');
+            err.status = 401;
+            return next(err);
+        }
 
-    const credentials = Buffer.from(header.split(' ')[1], 'base64')
-        .toString()
-        .split(':');
-    const [user, password] = credentials;
-    if (user.toLowerCase() === 'jbond' && password === 'AstonMartin007') {
-        return next(); //User is authorized
+        const auth = Buffer.from(authHeader.split(' ')[1], 'base64')
+            .toString()
+            .split(':');
+        const user = auth[0];
+        const pass = auth[1];
+        if (user === 'admin' && pass === 'password') {
+            res.cookie('user', 'admin', { signed: true });
+            return next(); // authorized
+        } else {
+            const err = new Error('You are not authenticated!');
+            res.setHeader('WWW-Authenticate', 'Basic');
+            err.status = 401;
+            return next(err);
+        }
     } else {
-        createError();
+        if (req.signedCookies.user === 'admin') {
+            return next();
+        } else {
+            const err = new Error('You are not authenticated!');
+            err.status = 401;
+            return next(err);
+        }
     }
-};
+}
 
 app.get('/', (req, res) => {
     console.log(req.headers);

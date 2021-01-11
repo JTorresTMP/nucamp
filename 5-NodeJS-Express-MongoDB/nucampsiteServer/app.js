@@ -37,9 +37,11 @@ const auth = (req, res, next) => {
         return next(err);
     }
 
+    console.log('Logging authHeader before Buffer', authHeader);
     const auth = Buffer.from(authHeader.split(' ')[1], 'base64')
         .toString()
         .split(':');
+    console.log('After Buffer', auth);
     const user = auth[0];
     const pass = auth[1];
     if (user === 'admin' && pass === 'password') {
