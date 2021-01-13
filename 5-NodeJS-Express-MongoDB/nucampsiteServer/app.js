@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const passport = require('passport');
+const authenticate = require('./authenticate');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -27,42 +29,30 @@ connect.then(
     (err) => console.log(err)
 );
 
+app.use(express.json());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-const auth = (req, res, next) => {
-    console.log(req.headers);
-    const authHeader = req.headers.authorization;
-    if (!authHeader) {
-        const err = new Error('You are not authenticated');
-        res.setHeader('WWW-Authenticate', 'Basic');
-        err.status = 401;
-        return next(err);
-    }
+function auth(req, res, next) {
+    console.log(req.user);
 
-    console.log('Logging authHeader before Buffer', authHeader);
-    const auth = Buffer.from(authHeader.split(' ')[1], 'base64')
-        .toString()
-        .split(':');
-    console.log('After Buffer', auth);
-    const user = auth[0];
-    const pass = auth[1];
-    if (user === 'admin' && pass === 'password') {
-        return next(); //User is authorized
-    } else {
-        const err = new Error('You are not authenticated');
-        res.setHeader('WWW-Authenticate', 'Basic');
+    if (!req.user) {
+        const err = new Error('You are not authenticated!');
         err.status = 401;
         return next(err);
+    } else {
+        return next();
     }
-};
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
-app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
