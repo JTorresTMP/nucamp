@@ -221,6 +221,7 @@ campsiteRouter
         );
     })
     .put(authenticate.verifyUser, (req, res, next) => {
+        // Really sorry about the formatting, I blame prettier lol
         Campsite.findById(req.params.campsiteId)
             .then((campsite) => {
                 if (
