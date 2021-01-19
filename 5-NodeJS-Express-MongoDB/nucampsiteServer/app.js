@@ -14,6 +14,7 @@ var app = express();
 const campsiteRouter = require('./routes/campsites');
 const promotionRouter = require('./routes/promotions');
 const partnerRouter = require('./routes/partners');
+const uploadRouter = require('./routes/uploads');
 
 const mongoose = require('mongoose');
 
@@ -52,6 +53,7 @@ app.use(passport.initialize());
 // app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/imageUpload', uploadRouter);
 
 // function auth(req, res, next) {
 //     console.log(req.user);
