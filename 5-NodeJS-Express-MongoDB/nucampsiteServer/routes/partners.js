@@ -1,10 +1,12 @@
 const partnersRouter = require('express').Router();
 const Partner = require('../models/partner');
 const authenticate = require('../authenticate');
+const cors = require('./cors');
 
 partnersRouter
     .route('/')
-    .get((req, res, next) => {
+    .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
+    .get(cors.cors, (req, res, next) => {
         Partner.find()
             .then((partners) => {
                 res.statusCode = 200;
@@ -14,6 +16,7 @@ partnersRouter
             .catch((err) => next(err));
     })
     .post(
+        cors.corsWithOptions,
         authenticate.verifyUser,
         authenticate.verifyAdmin,
         (req, res, next) => {
@@ -27,11 +30,12 @@ partnersRouter
                 .catch((err) => next(err));
         }
     )
-    .put(authenticate.verifyUser, (req, res) => {
+    .put(cors.corsWithOptions, authenticate.verifyUser, (req, res) => {
         res.statusCode = 403;
         res.end('PUT operation not supported on /partners');
     })
     .delete(
+        cors.corsWithOptions,
         authenticate.verifyUser,
         authenticate.verifyAdmin,
         (req, res, next) => {
@@ -47,7 +51,8 @@ partnersRouter
 
 partnersRouter
     .route('/:partnerId')
-    .get((req, res, next) => {
+    .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
+    .get(cors.cors, (req, res, next) => {
         Partner.findById(req.params.partnerId)
             .then((partner) => {
                 if (partner) {
@@ -58,13 +63,14 @@ partnersRouter
             })
             .catch((err) => next(err));
     })
-    .post(authenticate.verifyUser, (req, res) => {
+    .post(cors.corsWithOptions, authenticate.verifyUser, (req, res) => {
         res.statusCode = 403;
         res.end(
             `POST operation not supported on /partners/${req.params.partnerId}`
         );
     })
     .put(
+        cors.corsWithOptions,
         authenticate.verifyUser,
         authenticate.verifyAdmin,
         (req, res, next) => {
@@ -84,6 +90,7 @@ partnersRouter
         }
     )
     .delete(
+        cors.corsWithOptions,
         authenticate.verifyUser,
         authenticate.verifyAdmin,
         (req, res, next) => {
