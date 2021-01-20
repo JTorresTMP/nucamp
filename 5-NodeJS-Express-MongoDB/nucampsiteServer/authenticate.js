@@ -4,6 +4,7 @@ const User = require('./models/user');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const jwt = require('jsonwebtoken');
+const GoogleTokenStrategy = require('passport-google-token');
 
 const config = require('./config.js');
 
@@ -49,3 +50,35 @@ exports.verifyAdmin = (req, res, next) => {
         return next(err);
     }
 };
+
+// Google oAuth
+// exports.googlePassport = passport.use(
+//     new GoogleTokenStrategy(
+//         {
+//             clientId: config.google.clientId,
+//             clientSecret: config.google.clientSecret
+//         },
+//         (accessToken, refreshToken, profile, done) => {
+//             User.findOne({ googleId: profile.id }, (err, user) => {
+//                 if (err) {
+//                     return done(err, false);
+//                 }
+//                 if (!err && user) {
+//                     return done(null, user);
+//                 } else {
+//                     user = new User({ username: profile.displayName });
+//                     user.googleId = profile.id;
+//                     user.firstname = profile.name.givenName;
+//                     user.lastname = profile.name.familyName;
+//                     user.save((err, user) => {
+//                         if (err) {
+//                             return done(err, false);
+//                         } else {
+//                             return done(null, user);
+//                         }
+//                     });
+//                 }
+//             });
+//         }
+//     )
+// );
