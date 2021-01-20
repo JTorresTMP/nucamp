@@ -13,7 +13,8 @@ const userSchema = new mongoose.Schema({
     admin: {
         type: Boolean,
         default: false
-    }
+    },
+    googleId: String
 });
 
 userSchema.plugin(passportLocalMongoose);
