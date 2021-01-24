@@ -15,6 +15,7 @@ const campsiteRouter = require('./routes/campsites');
 const promotionRouter = require('./routes/promotions');
 const partnerRouter = require('./routes/partners');
 const uploadRouter = require('./routes/uploads');
+const favoriteRouter = require('./routes/favorites');
 
 const mongoose = require('mongoose');
 
@@ -83,6 +84,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/campsites', campsiteRouter);
 app.use('/promotions', promotionRouter);
 app.use('/partners', partnerRouter);
+app.use('/favorites', favoriteRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
